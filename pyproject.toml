@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "orion"
+version = "0.1.0"
+description = "A tool to easily migrate Airflow Environments from any Cloud Provider to Astronomer!"
+authors = ["fritz-astronomer <fritz@astronomer.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "^8.1.3"
+boto3 = "^1.26.80"
+halo = "^0.0.31"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.1"
+black = "^23.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+
+[tool.poetry.scripts]
+orion = "orion.__main__:migrate"
