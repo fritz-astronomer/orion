@@ -10,3 +10,5 @@
 * @fritz-astronomer
 .pre-commit-config.yaml @fritz-astronomer
 CODEOWNERS @fritz-astronomer
+pyproject.toml @fritz-astronomer
+poetry.lock @fritz-astronomer

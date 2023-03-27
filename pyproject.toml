@@ -8,12 +8,20 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 click = "^8.1.3"
-boto3 = "^1.26.80"
 halo = "^0.0.31"
+sh = "^2.0.2"
+fs = "^2.4.16"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.1"
 black = "^23.1.0"
+pytest-cov = "^4.0.0"
+
+
+[tool.poetry.group.aws.dependencies]
+boto3 = "^1.26.81"
+boto3-stubs = {extras = ["mwaa", "s3"], version = "^1.26.81"}
+fs-s3fs = "^1.1.1"
 
 [build-system]
 requires = ["poetry-core"]
@@ -21,6 +29,10 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.isort]
 profile = "black"
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+skips = ["B301", "B403"]
 
 [tool.poetry.scripts]
 orion = "orion.__main__:migrate"
